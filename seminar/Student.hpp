@@ -16,6 +16,7 @@ class Student {
         ~Student();
         bool learn(std::string text);
         void drink(std::string drink_name);
+        std::string getName() { return _name; }
 
     protected:
         std::string _name;
