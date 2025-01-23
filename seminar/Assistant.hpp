@@ -8,7 +8,7 @@
 #ifndef ASSISTANT_HPP
     #define ASSISTANT_HPP
 
-    #include <Student.hpp>
+    #include "Student.hpp"
 
 class Assistant {
     public:

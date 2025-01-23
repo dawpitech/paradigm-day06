@@ -7,10 +7,9 @@
 
 #include <iostream>
 #include <format>
+#include <fstream>
 
 #include "Assistant.hpp"
-
-#include <fstream>
 
 Assistant::Assistant(int id)
 {
