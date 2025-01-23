@@ -5,11 +5,13 @@
 ** main.cpp
 */
 
+#include "Dean.hpp"
 #include "Student.hpp"
 
 int main()
 {
     Student student("John");
+    Dean dean("Clement");
 
     for (int i = 0; i < 3; i++)
         student.learn("C++, more C++, don't ever stop C++.");
@@ -17,5 +19,6 @@ int main()
     student.drink("Monster");
     student.drink("Toilet Water");
     student.learn("Wow, C++ look sooo cool");
+    dean.teachStudent(&student, "C++ 101");
     return 0;
 }

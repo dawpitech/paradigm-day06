@@ -21,6 +21,7 @@ BDIR	=	.build/release
 
 SRC	=	Student.cpp
 SRC	+=	Assistant.cpp
+SRC	+=	Dean.cpp
 SRC	+=	bonus/main.cpp
 
 OBJ = $(SRC:%.cpp=$(BDIR)/%.o)
