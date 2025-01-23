@@ -28,9 +28,6 @@
             man-pages-posix
             gdb
           ] ++ deps;
-          shellHook = ''
-            ln -s ${pkgs.gcc} foo
-          '';
         };
 
         formatter = pkgs.nixpkgs-fmt;
