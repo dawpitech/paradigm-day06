@@ -8,7 +8,7 @@
     utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
-        cc = pkgs.gcc;
+        cc = pkgs.gcc14;
 
         deps = with pkgs; [
           libcxx
@@ -28,6 +28,9 @@
             man-pages-posix
             gdb
           ] ++ deps;
+          shellHook = ''
+            ln -s ${pkgs.gcc} foo
+          '';
         };
 
         formatter = pkgs.nixpkgs-fmt;

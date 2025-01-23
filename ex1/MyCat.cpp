@@ -20,8 +20,7 @@ static int printError(const std::string& str)
 {
     std::string input;
 
-    while (true) {
-        std::getline(std::cin, input);
+    while (std::getline(std::cin, input)) {
         std::cout << input << std::endl;
     }
 }
