@@ -44,6 +44,7 @@ int main()
             << std::setw(16)
             << unit
             << std::endl;
+        unit.clear();
     }
     return 0;
 }
