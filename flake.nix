@@ -8,7 +8,7 @@
     utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
-        cc = pkgs.gcc12;
+        cc = pkgs.gcc;
 
         deps = with pkgs; [
           libcxx
