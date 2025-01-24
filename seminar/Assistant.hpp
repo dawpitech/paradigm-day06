@@ -15,9 +15,10 @@ class Assistant {
         explicit Assistant(int id);
         ~Assistant();
         void giveDrink(Student* student, std::string drink_name);
-        std::string readDrink(Student* student);
+        std::string readDrink(std::string student_name);
         void helpStudent(Student* student);
         void timeCheck();
+        int getId() const { return _id; }
 
     protected:
         int _id;

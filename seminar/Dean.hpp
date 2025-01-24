@@ -16,6 +16,7 @@ class Dean {
         ~Dean();
         void teachStudent(Student* student, std::string lesson);
         void timeCheck();
+        std::string getName() { return _name; }
 
     protected:
         std::string _name;

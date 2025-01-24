@@ -30,7 +30,7 @@ void Assistant::timeCheck()
         std::cout << std::format("Assistant {}: Enough teaching for today *sip coffee*\n",
             this->_id);
     else
-        std::cout << std::format("Assistant {}: Time to teach some serious"
+        std::cout << std::format("Assistant {}: Time to teach some serious "
             "business *sip coffee*\n", this->_id);
     this->_is_working = !this->_is_working;
 }
@@ -44,11 +44,9 @@ void Assistant::giveDrink(Student* student, std::string drink_name)
     student->drink(drink_name);
 }
 
-std::string Assistant::readDrink(Student* student)
+std::string Assistant::readDrink(std::string student_name)
 {
-    if (student == nullptr)
-        return "";
-    std::ifstream file_stream(student->getName() + ".drink", std::ios::in |
+    std::ifstream file_stream(student_name + ".drink", std::ios::in |
         std::ios::ate);
 
     if (!file_stream.is_open())
@@ -59,7 +57,7 @@ std::string Assistant::readDrink(Student* student)
     file_stream.read(&content[0], size);
     file_stream.close();
     std::cout << std::format("Assistant {}: {} needs a {} *sip coffee*\n",
-        this->_id, student->getName(), content);
+        this->_id,student_name, content);
     return content;
 }
 

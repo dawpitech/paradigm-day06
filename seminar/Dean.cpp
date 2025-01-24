@@ -27,11 +27,10 @@ Dean::~Dean()
 void Dean::teachStudent(Student* student, std::string lesson)
 {
     if (student == nullptr) return;
-    if (!student->learn(lesson)) {
-        std::cout << std::format("Dean {}: All work and no play makes {} "
-            "a dull student\n", this->_name, student->getName());
-        return;
-    }
+    if (student->learn(lesson)) return;
+
+    std::cout << std::format("Dean {}: All work and no play makes {} "
+        "a dull student.\n", this->_name, student->getName());
     std::ofstream file_stream(student->getName() + ".drink", std::ios::binary);
 
     std::string drink_name;
@@ -66,7 +65,7 @@ void Dean::timeCheck()
         std::cout << std::format("Dean {}: Where is everyone?\n",
             this->_name);
     else
-        std::cout << std::format("Dean {}: Don't forget to close the window "
+        std::cout << std::format("Dean {}: Don't forget to close the windows "
             "when you leave.\n", this->_name);
     this->_is_working = !this->_is_working;
 }
