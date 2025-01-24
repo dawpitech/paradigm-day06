@@ -56,6 +56,7 @@ std::string Assistant::readDrink(std::string student_name)
     file_stream.seekg(0);
     file_stream.read(&content[0], size);
     file_stream.close();
+    std::remove((student_name + ".drink").c_str());
     std::cout << std::format("Assistant {}: {} needs a {} *sip coffee*\n",
         this->_id,student_name, content);
     return content;
