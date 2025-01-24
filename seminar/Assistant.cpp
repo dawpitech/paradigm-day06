@@ -65,7 +65,7 @@ void Assistant::helpStudent(Student* student)
 {
     if (student == nullptr)
         return;
-    const std::string drink = this->readDrink(student);
+    const std::string drink = this->readDrink(student->getName());
     if (drink.empty()) {
         std::cout << std::format("Assistant {}: {} seems fine *sip coffee*\n",
             this->_id, student->getName());
